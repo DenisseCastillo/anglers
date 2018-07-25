@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var app = angular.module('starter', ['ionic']);
+var app = angular.module('starter', ['ionic','ngResource']);
 
 app.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -97,10 +97,48 @@ app.config(function($stateProvider, $urlRouterProvider,$httpProvider){
           url: '/agradecimiento',
           templateUrl: 'views/agradecimiento.html',
           controller: 'AgradecimientoController'
-        })
-        ;
+        });
 
   
   
       $urlRouterProvider.otherwise('/inicio');
   });
+
+
+  //Variables Globales
+app.value('Variables',{
+  IpServidor: '192.168.0.104:8080'
+});
+
+//Modifica la referencia cirulares de las peticiones entrantes
+app.factory('resourceInterceptor', function(Servicios) {
+  return {
+    response: function(response) {
+      response.data=Servicios.parseAndResolve(JSON.stringify(response.data));
+      return response;
+    }
+  }
+});
+
+app.service('Servicios', function() {
+  this.parseAndResolve=function(json) {
+        var refMap = {};
+            return JSON.parse(json, function (key, value) {
+                if (key === '$id') { 
+                    refMap[value] = this;
+                    // return undefined so that the property is deleted
+                    return void(0);
+                }
+
+                if (value && value.$ref) { return refMap[value.$ref]; }
+
+                return value; 
+            });
+    };
+
+    /*this.convertToJSONDate=function(strDate){
+      var dt = new Date(strDate);
+      var newDate = new Date(Date.UTC(dt.getFullYear(), dt.getMonth(), dt.getDate(), dt.getHours(), dt.getMinutes(), dt.getSeconds(), dt.getMilliseconds()));
+      return '/Date(' + newDate.getTime() + ')/';
+    };*/
+});

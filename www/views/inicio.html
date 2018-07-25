@@ -10,7 +10,7 @@
         </div>
         <div class="list">
             <label class="item item-input label-icon">
-            <input type="text" placeholder="First Name" class="placeh">
+            <input type="text" placeholder="First Name" class="placeh"ng-model="encuesta.name" ng-pattern="/^[a-zA-Z\s]*$/">
             </label>
         </div>
         </div>
@@ -21,7 +21,7 @@
         </div>
         <div class="list">
             <label class="item item-input label-icon">
-            <input type="text" placeholder="Last Name" class="placeh">
+            <input type="text" placeholder="Last Name" class="placeh" ng-model="encuesta.lastName" ng-pattern="/^[a-zA-Z\s]*$/">
             </label>
         </div>
         </div>
@@ -32,7 +32,7 @@
         </div>
         <div class="list">
             <label class="item item-input label-icon">
-            <input type="email" placeholder="E-Mail" class="placeh">
+            <input type="email" placeholder="E-Mail" class="placeh" ng-model="encuesta.email">
             </label>
         </div>
         </div>
