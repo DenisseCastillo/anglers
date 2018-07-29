@@ -18,7 +18,7 @@ app.run(function($ionicPlatform) {
       cordova.plugins.Keyboard.disableScroll(true);
     }
     if(window.StatusBar) {
-      StatusBar.styleDefault();
+      Statusbar.hide();
     }
   });
 });
@@ -107,7 +107,9 @@ app.config(function($stateProvider, $urlRouterProvider,$httpProvider){
 
   //Variables Globales
 app.value('Variables',{
-  IpServidor: '192.168.0.104:8080'
+  //IpServidor: '192.168.0.104:8080'
+  IpServidor: '18.191.252.222/wcfAnglers'
+  //IpServidor: '172.16.12.30:8080'
 });
 
 //Modifica la referencia cirulares de las peticiones entrantes

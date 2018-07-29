@@ -6,21 +6,9 @@
     height: 47px;
     margin-top: 40px;
 }
-.cuadro-input{
-    border: 1px solid #f2d376;
-    width:80px; 
-    background-color: #f2d376; 
-    float:left;
-    height:100%;
-    text-align:center;
-}
 .icono-input{
     font-size: 37px; 
     color: #91782e;
-}
-.label-icon{
-    border-color:#f2d376; 
-    color:#91782e;
 }
 .placeh::placeholder{
     color:#91782e;
@@ -29,6 +17,14 @@
     width:500px; 
     margin-top: 100px;
 }
+table{
+    width: 40%;
+    margin-top: 7%;
+}
+.input-container{
+    border: 1px solid #91782e;
+}
+
  /* Clases para float button*/
 .float-button {
     background-color:#000000;
@@ -40,7 +36,6 @@
     padding: 30px;
     font-size: 40px;
     position: fixed;
-    bottom: -25%; /* Adjust height */
     right: 10%; /* Adjust position */
     z-index: 1000;
 }

@@ -1,42 +1,54 @@
-<ion-content>
+<ion-content overflow-scroll=true>
     <center>
         <div class="logo-principal">
         <img src="img/anglers-inn-logo.png" alt="" width="100%;">
         </div>
         <!-- Input de Nombre-->
-        <div class="input-icon" style="margin-top: 50px;">
-        <div class="cuadro-input">
-            <div style="margin-top: 5px;"><i class="icon ion-ios-person icono-input"></i></div>
-        </div>
-        <div class="list">
-            <label class="item item-input label-icon">
-            <input type="text" placeholder="First Name" class="placeh"ng-model="encuesta.name" ng-pattern="/^[a-zA-Z\s]*$/">
-            </label>
-        </div>
-        </div>
-        <!-- Input de Apellido-->
-        <div class="input-icon">
-        <div class="cuadro-input">
-            <div style="margin-top: 5px;"><i class="icon ion-ios-person icono-input"></i></div>
-        </div>
-        <div class="list">
-            <label class="item item-input label-icon">
-            <input type="text" placeholder="Last Name" class="placeh" ng-model="encuesta.lastName" ng-pattern="/^[a-zA-Z\s]*$/">
-            </label>
-        </div>
-        </div>
-        <!-- Input de E-mail-->
-        <div class="input-icon">
-        <div class="cuadro-input">
-            <div style="margin-top: 5px;"><i class="icon ion-email icono-input"></i></div>
-        </div>
-        <div class="list">
-            <label class="item item-input label-icon">
-            <input type="email" placeholder="E-Mail" class="placeh" ng-model="encuesta.email">
-            </label>
-        </div>
-        </div>
-    </center>
+        <center>
+            <form name="frmInicio">
+                <!-- <table>
+                    <tr class="input-container">
+                        <td style="border: 1px solid #91782e; text-align: center; width: 15%; background-color: #f2d376;"><i class="icon ion-ios-person icono-input"></i></td>
+                        <td><input name="frmInicio.name" type="text" placeholder="First Name" class="placeh"ng-model="encuesta.name" ng-pattern="/^[a-zA-Z\s]*$/" style="margin-left: 1em;"></td>
+                    </tr>
+                    <tr style="height: 1.5em;"></tr>
+                    <tr class="input-container">
+                        <td style="border: 1px solid #91782e; text-align: center; width: 15%; background-color: #f2d376;"><i class="icon ion-ios-person icono-input"></i></td>
+                        <td><input name="frmInicio.lastName" type="text" placeholder="Last Name" class="placeh" ng-model="encuesta.lastName" ng-pattern="/^[a-zA-Z\s]*$/" style="margin-left: 1em;"></td>
+                    </tr>
+                    <tr style="height: 1.5em;"></tr>
+                    <tr class="input-container">
+                        <td style="border: 1px solid #91782e; text-align: center; width: 15%; background-color: #f2d376;"><i class="icon ion-email icono-input"></i></td>
+                        <td><input name="frmInicio.email" type="email" placeholder="E-Mail" class="placeh" ng-model="encuesta.email" style="margin-left: 1em;"></td>
+                    </tr>
+                </table> -->
+                <div class="row" style="max-width: 50%;padding-bottom: 2%;">
+                    <div class="col col-20" style="border: 1px solid #91782e; text-align: center; width: 15%; background-color: #f2d376;">
+                        <i class="icon ion-ios-person icono-input "></i>
+                    </div>
+                    <div class="col" style="border: 1px solid #91782e;">
+                        <input name="frmInicio.name" style="width: 100%" type="text" placeholder="First Name" class="placeh"ng-model="encuesta.name" ng-pattern="/^[a-zA-Z\s]*$/" >
+                    </div>
+                </div>
+                <div class="row" style="max-width: 50%;padding-bottom: 2%;">
+                        <div class="col col-20" style="border: 1px solid #91782e; text-align: center; width: 15%; background-color: #f2d376;">
+                            <i class="icon ion-ios-person icono-input "></i>
+                        </div>
+                        <div class="col" style="border: 1px solid #91782e;">
+                            <input name="frmInicio.lastName" style="width: 100%" type="text" placeholder="Last Name" class="placeh" ng-model="encuesta.lastName" ng-pattern="/^[a-zA-Z\s]*$/" style="margin-left: 1em;">
+                        </div>
+                </div>
+                <div class="row" style="max-width: 50%;">
+                        <div class="col col-20" style="border: 1px solid #91782e; text-align: center; width: 15%; background-color: #f2d376;">
+                            <i class="icon ion-email icono-input"></i>
+                        </div>
+                        <div class="col" style="border: 1px solid #91782e;">
+                            <input name="frmInicio.email" style="width: 100%" type="email" placeholder="E-Mail" class="placeh" ng-model="encuesta.email" style="margin-left: 1em;">
+                        </div>
+                </div>
+            </form>
+        </center>
+       
     <!-- Float button -->
     <div class="float-button" ng-click="IrP1()">
         <span class="height-fix">
